@@ -17,7 +17,7 @@ const Nav = () => {
           <Line 
             transition={{duration: 0.75}} 
             initial={{width: '0%'}} 
-            animate={{width: pathname === '/' ? '100%' : '0%'}}
+            animate={{width: pathname === '/' ? '60%' : '0%'}}
           />
         </li>
         <li>
@@ -25,7 +25,7 @@ const Nav = () => {
           <Line 
             transition={{duration: 0.75}} 
             initial={{width: '0%'}} 
-            animate={{width: pathname === '/work' ? '100%' : '0%'}}
+            animate={{width: pathname === '/work' ? '60%' : '0%'}}
           />
         </li>
         <li>
@@ -33,7 +33,7 @@ const Nav = () => {
           <Line 
             transition={{duration: 0.75}} 
             initial={{width: '0%'}} 
-            animate={{width: pathname === '/contact' ? '100%' : '0%'}}
+            animate={{width: pathname === '/contact' ? '60%' : '0%'}}
           />
         </li>
       </ul>
@@ -97,11 +97,17 @@ const StyledNav = styled.nav`
 
 const Line = styled(motion.div)`
   height: 0.1rem;
-  background: white;
+  background: #23d997;
   width: 0%;
   position: absolute;
-  bottom: -50%;
-  left: 0%;
+  bottom: -80%;
+  left: 60%;
+
+  @media (max-width: 1300px) {
+    background: white;
+    left: 20%;
+    bottom: -50%
+  }
 `;
 
 
