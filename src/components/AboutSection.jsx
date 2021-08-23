@@ -1,41 +1,46 @@
 import React from "react";
-import home1 from '../img/home1.png'
-import styled from "styled-components";
+import home1 from '../img/home1.png';
 import { About, Description, Image, Hide } from "../styles";
 
+import { motion } from "framer-motion";
+import { titleAnim, fade, photoAnim } from "../animation";
+
 const AboutSection = () => {
+
   return (
     <About>
 
       <Description>
 
-        <div className="title">
+        <motion.div className="title">
           <Hide>
-            <h2>We Work to make</h2>
-          </Hide>
-          <Hide>
-            <h2>your <span>dreams</span> come</h2>
-          </Hide>
-          <Hide>
-            <h2>true.</h2>
-          </Hide>
-        </div>
 
-        <p>Contact us for any Photography and Videography ideas.</p>
-        <button>Contact Us</button>
+            <motion.h2 variants={titleAnim}>
+              We Work to make
+            </motion.h2>
+
+          </Hide>
+          <Hide>
+            <motion.h2 variants={titleAnim}>your <span>dreams</span> come</motion.h2>
+          </Hide>
+          <Hide>
+            <motion.h2 variants={titleAnim}>true.</motion.h2>
+          </Hide>
+        </motion.div>
+
+        <motion.p variants={fade}>Contact us for any Photography and Videography ideas.</motion.p>
+        <motion.button variants={fade}>Contact Us</motion.button>
 
       </Description>
 
       <Image>
-        <img src={home1} alt="guy with a camera" />
+        <motion.img variants={photoAnim} src={home1} alt="guy with a camera" />
       </Image>
 
     </About>
   );
 }
 
-
-// Styled Components
 
 
 
